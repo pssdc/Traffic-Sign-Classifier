@@ -1,9 +1,9 @@
 
 # Traffic-Sign-Classifier
 
-**Build a Traffic Sign Recognition Project**
 
-Goals of the project
+**Goals of the project
+
 * Load the traffic signal data set and provide summary including exploratory visualization. 
 * Preprocess the data if needed and include the reasoning behind it. 
 * Provide details of model architecture.
@@ -11,9 +11,7 @@ Goals of the project
 * Download new German traffic sign images from internet and test the model. 
 * Provide top 5 softmax probabilities of predictions. 
 
-## Rubric Points
-
-Basic summary of the the dataset
+### Basic summary of the the dataset
 
 * I used the pickle object serialization to load the dataset.
 The original dataset included
