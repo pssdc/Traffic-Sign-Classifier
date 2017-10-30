@@ -45,9 +45,9 @@ After preprocessing and addition dataset generation following was the final samp
 ### Model Architecture
  I started with the Lenet lab solution architecture.
   
-| Layer         		|     Description	        	|                 |
-|:---------------------:|:---------------------------------------------:|:----------------|accuracy
-|Layer 1                |                                                |                 |
+| Layer         	     	|     Description	                       	|                      |
+|:---------------------:|:---------------------------------------------:|:----------------|
+|Layer 1                |                               |                 |
 |       |Input         		| 32x32x1 grayscale image  |
 |	 |Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 |
 | 	|RELU			|				 |					
@@ -59,14 +59,13 @@ After preprocessing and addition dataset generation following was the final samp
 | | Flatten output = 5x5x16 = 400||					|						
 | Layer 3 |||
 | |Fully connected | input 400, output 120     |
-| |RELU
+| |RELU ||
 | Layer 4||	|
 |  | Fully connected		| input 120, output 84  |
 | |RELU					|	|
 | |Fully connected		| input 84, output 43  |
-| |RELU|||
-
-   
+| |RELU|||  
+     
      
 * With the above architecture, I iterated the EPOCHS, learning rate. My output validation accuracy ranging from 85 - 90%.
        Testing accuracy came to 89%.
