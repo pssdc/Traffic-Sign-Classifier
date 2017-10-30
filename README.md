@@ -26,7 +26,7 @@ After preprocessing and addition dataset generation following was the final samp
 
 
 ### Visualization 
-  1. First, I plotted a bar chart to check the frequency of each class in the dataset. Based on the Class vs frequency of labels we observe that the number of samples for the classes are not uniform. The difference between the minimum (180) and maximum (2010) frequency of classes was quit large. This may lead to training being skewed towards the classes with large frequency. To even out the frequency of samples, additional data is generated.
+  1. First, I plotted a bar chart to check the frequency of each class in the dataset. Based on the Class vs frequency of class I observed that the number of samples for the classes are not uniform. The difference between the minimum (180) and maximum (2010) frequency of class was quit large. This may lead to training being skewed towards the classes with large frequency. To even out the frequency of samples, additional data is generated.
 
  2. All 43 images are also plotted (in Jupyter notebook) for visualization. 
 
@@ -37,7 +37,7 @@ After preprocessing and addition dataset generation following was the final samp
   3. Many different formulas were used for data normalization but I settled with  data /128 - 1 as it gave me the best validation  accuracy. 
   4. To improve the training speed, images were also converted to grayscale using Opencv library. Opencv grayscale function required additional processing to add the 'depth' of 1. The 'newaxis' function from Numpy was used to add the 'depth'.  
   5. Data was also shuffled using sklearn utils for random distribution of the inputs before training. 
-  6. Initially I used the validation set from the original data set but after several days of iterations I was not able to get my accuracy above 96%.  I recreated my validation dataset again from the preprocessed dataset using sklearn utility. This increased my accuracy from 96% to 99.4%. 
+  6. Initially I used the validation set provided in the original data set but after several days of iterations I was not able to get my accuracy above 96%.  I recreated my validation dataset again from the preprocessed dataset using sklearn utility. This increased my accuracy from 96% to 99+%. 
 
 
 ### Model Architecture
@@ -101,7 +101,7 @@ After preprocessing and addition dataset generation following was the final samp
 ||	Fully connected | input 84, output 43|
 ||RELU ||
 
-  This architecture improved my validation accuracy from 90% to 96%.
+ In addition to the update in model, I also changed my validation dataset (as explained in #6 under Data preprocessing) This architecture improved my validation accuracy upto 99+%
   Testing accuracy came to 92.8 % 
 
 1. How the model was trained. Provide details of the parameters and hyper parameters. 
