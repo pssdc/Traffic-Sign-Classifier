@@ -42,106 +42,93 @@ After proprocessing and addition dataset generation following was the final samp
 
 
 ### Model Architecture
-  1. I started with the Lenet lab solution architecture.
-        Layer 1 
-
-        Input   	32x32x1 grayscale image
-	Convolution     5x5	1x1 stride, valid padding, outputs 28x28x6
-	RELU activation function	
-	Max pooling	2x2 stride, outputs 14x14x6
-
-        Layer 2
-
-        Input           14x14x6  
-	Convolution	5x5	1x1 stride, valid padding, outputs 10x10x16
-	RELU activation function	
-	Max pooling	2x2 stride, outputs 5x5x16
-        
-        Flatten the output (5x5x16). Output = 400
-
-        Layer 3
-	Fully connected input 400, output 120
-	RELU activation function	
-     
-        Layer 4
-	Fully connected input 120, output 84
-	RELU activation function	
+ I started with the Lenet lab solution architecture.
   
-        Layer 5
-  	Fully connected input 84, output 43
-	RELU activation function	
+| Layer         		|     Description	        	|                 |
+|:---------------------:|:---------------------------------------------:|:----------------|
+|Layer 1                |                                                |                 |
+|       |Input         		| 32x32x1 grayscale image  |
+|	 |Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 |
+| 	|RELU			|				 |					
+| 	|Max pooling	      	| 2x2 stride,  outputs 14x14x6 	|
+| Layer 2 |	| 	|
+| 	  |Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16    |
+|         |RELU			|	|		
+|   | Max pooling	      | 2x2 stride,  outputs 5x5x16 				|
+| | Flatten output = 5x5x16 = 400||					|						
+| Layer 3 |||
+| |Fully connected | input 400, output 120     |
+| |RELU
+| Layer 4||	|
+|  | Fully connected		| input 120, output 84  |
+| |RELU					|	|
+| |Fully connected		| input 84, output 43  |
+| |RELU|||
+
+   
      
-       With the above architecture, I iterated the EPOCHS, learning rate. My output validation accuracy rangining from 85 - 90%.
+* With the above architecture, I iterated the EPOCHS, learning rate. My output validation accuracy rangining from 85 - 90%.
        Testing accuracy came to 89%.
 
-   2. 
- 	Layer 1 
+* I updated the model as followes
 
-        Input   	32x32x1 grayscale image
-	Convolution     5x5	1x1 stride, valid padding, outputs 28x28x32
-	RELU activation function	
-	Max pooling	2x2 stride, outputs 14x14x32
-
-        Layer 2
-
-        Input           14x14x32  
-	Convolution	5x5	1x1 stride, valid padding, outputs 10x10x54
-	RELU activation function	
-	Max pooling	2x2 stride, outputs 5x5x64
-        
-        Flatten the output (5x5x16). Output = 1600
-
-        Layer 3
-	Fully connected input 1600, output 800
-	RELU activation function	
-     
-        Layer 4
-	Fully connected input 800, output 400
-	RELU activation function	
-  
-        Layer 5
-  	Fully connected input 400, output 120
-	RELU activation function	
-
-        Dropout with 0.7 probability
-  
-        Layer 6
-  	Fully connected input 120, output 84
-	RELU activation function
-	
-        Dropout  with 0.7 probability
-
-  
-        Layer 7
-  	Fully connected input 84, output 43
-	RELU activation function	
+| Layer         		|     Description	        	|                 |
+|:---------------------:|:---------------------------------------------:|:----------------|
+| Layer 1     |||
+| |        Input   |	32x32x1 grayscale image |
+||	Convolution |    5x5	1x1 stride, valid padding, outputs 28x28x32 |
+||	RELU |	
+||	Max pooling |	2x2 stride, outputs 14x14x32 |
+||||
+|        Layer 2 |||
+|	|Convolution	|5x5	1x1 stride, valid padding, outputs 10x10x54|
+|	|RELU |||	
+|	|Max pooling	|2x2 stride, outputs 5x5x64|
+| Flatten the output (5x5x16). Output = 1600 |||
+|       Layer 3 |||
+||	Fully connected |input 1600, output 800|
+||	RELU ||	    
+|  Layer 4 |||
+||	Fully connected |input 800, output 400|
+||	RELU 	||
+|    Layer 5 |||
+||Fully connected |input 400, output 120|
+| |	RELU 	||
+||    Dropout with 0.9 probability||
+|        Layer 6 |||
+||	Fully connected | input 120, output 84|
+||	RELU ||	
+||     Dropout  with 0.9 probability ||  
+|       Layer 7 |||
+||	Fully connected | input 84, output 43|
+||RELU ||
 
   This architecture improved my validation accuracy from 90% to 96%.
-  Testing accuracy came to 93.3 % 
+  Testing accuracy came to 92.8 % 
 
 - How the model was trained. Provide details of the parameters and hyper parameters. 
   I spent lots of time with the original Lenet modal. I played with learning rates, EPOCHS, mu and sigma but I could not get the validation accuracy above 90%. 
-  Later I change my model as described above. With this model I used following settings
-  EPOCHS = 31
+  Later I change my model as described above. With the updated model I used following settings
+  EPOCHS = 20
   Learning Rate = 0.001
   Batch size = 128
   mu = 0
-  sigma = 0.1
+  sigma = 0.09
   dropout keep probability = 0.9
   Adam optimizer
 
-  I spent several days to improve the validation accuracy without any success. After looking at some other solutions on github, I regenerated my validation dataset from the preprocessed dataset (instead of using the validation set provided in the original data set). This suddenly improved my validation accuracy from 96% to 99%. Most likely the accuracy is improved due to the consistent preprocessing and scaling between the training and the validation dataset. 
+  I spent several days to improve the validation accuracy without any success. After looking at some other solutions on github, I regenerated my validation dataset from the preprocessed dataset (instead of using the validation set provided in the original data set). This suddenly improved my validation accuracy from 96% to 99.4%. Most likely the accuracy is improved due to the consistent preprocessing and scaling among the training and the validation dataset. 
 
 
 
-Testing on new images
+### Testing on new images
 
- I downloaded 5 images from the internet, visualized them and applied same grayscale and normalization similar to earlier images. 
- The data set accuracy with these images came out to be 100%. I think the images are relatively simple once thats why the accuracy is 100%. 
+ I downloaded 5 images from the internet, visualized them and applied same grayscale and normalization transforms. 
+ The data set accuracy with these images came out to be 100%. I think the images are relatively simple hence the accuracy is 100%. 
 
-Softmax probabilities
+### Softmax probabilities
 
-The top most softmax probability is coming out to be 100%. All the other (2nd and 3rd largest probabilities) are coming out to be zero. 
+The model predics 4 out of 5 images correctly. Model has difficulty in predicting "Road work" sign. I think it is relatively the most complex sign off all. Currently I have created my incremental dataset just by only rotating the images. I think, the model predections can be further improved by adding various other transforms (color exposure, wraping, scaling, cropping etc.) in the additional dataset.
 
  
 
