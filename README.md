@@ -126,7 +126,7 @@ After preprocessing and addition dataset generation following was the final samp
 
 ### Softmax probabilities
 
-The model predicts 4 out of 5 images correctly. Model has difficulty in predicting "Road work" sign. I think it is relatively the most complex sign off all. Currently I have created my incremental dataset just by only rotating the images. I think, the model predictions can be further improved by adding various other transforms (color exposure, wrapping, scaling, cropping etc.) in the additional dataset.
+The model predicts 5 out of 5 images correctly. In some other iterations, model has difficulty in predicting "Road work" sign. I think it is relatively the most complex sign off all. Currently I have created my incremental dataset just by only rotating the images. I think, the model predictions can be further improved by adding various other transforms (color exposure, wrapping, scaling, cropping etc.) in the additional dataset.
 
  
 
