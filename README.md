@@ -106,16 +106,16 @@ After preprocessing and addition dataset generation following was the final samp
   This architecture improved my validation accuracy from 90% to 96%.
   Testing accuracy came to 92.8 % 
 
-- How the model was trained. Provide details of the parameters and hyper parameters. 
-  I spent lots of time with the original Lenet modal. I played with learning rates, EPOCHS, mu and sigma but I could not get the validation accuracy above 90%. 
-  Later I change my model as described above. With the updated model I used following settings
-  EPOCHS = 20
-  Learning Rate = 0.001
-  Batch size = 128
-  mu = 0
-  sigma = 0.09
-  dropout keep probability = 0.9
-  Adam optimizer
+1. How the model was trained. Provide details of the parameters and hyper parameters. 
+2. I spent lots of time with the original Lenet modal. I played with learning rates, EPOCHS, mu and sigma but I could not get the validation accuracy above 90%. 
+  * Later I change my model as described above. With the updated model I used following settings
+  * EPOCHS = 20
+  * Learning Rate = 0.001
+  * Batch size = 128
+  * mu = 0
+  * sigma = 0.09
+  * dropout keep probability = 0.9
+  * Adam optimizer
 
   I spent several days to improve the validation accuracy without any success. After looking at some other solutions on github, I regenerated my validation dataset from the preprocessed dataset (instead of using the validation set provided in the original data set). This suddenly improved my validation accuracy from 96% to 99.4%. Most likely the accuracy is improved due to the consistent preprocessing and scaling among the training and the validation dataset. 
 
