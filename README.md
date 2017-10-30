@@ -73,7 +73,7 @@ After preprocessing and addition dataset generation following was the final samp
 * I updated the model as follows
 
 | Layer         		|     Description	        	|                 |
-|:---------------------:|:---------------------------------------------:|:----------------|
+|:----------:|:------------------:|:--------------|
 | Layer 1     |||
 | |        Input   |	32x32x1 grayscale image |
 ||	Convolution |    5x5	1x1 stride, valid padding, outputs 28x28x32 |
@@ -84,7 +84,7 @@ After preprocessing and addition dataset generation following was the final samp
 |	|Convolution	|5x5	1x1 stride, valid padding, outputs 10x10x54|
 |	|RELU |||	
 |	|Max pooling	|2x2 stride, outputs 5x5x64|
-| Flatten the output (5x5x16). Output = 1600 |||
+| |Flatten the output (5x5x16). Output = 1600 ||
 |       Layer 3 |||
 ||	Fully connected |input 1600, output 800|
 ||	RELU ||	    
