@@ -2,7 +2,7 @@
 # Traffic-Sign-Classifier
 
 
-**Goals of the project
+##  Goals of the project
 
 * Load the traffic signal data set and provide summary including exploratory visualization. 
 * Preprocess the data if needed and include the reasoning behind it. 
