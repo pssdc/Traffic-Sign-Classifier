@@ -103,9 +103,9 @@ The original dataset included
 This architecture improved my validation accuracy upto 94.1.
   Testing accuracy came to 93.6 % 
 
-1. How the model was trained. Provide details of the parameters and hyper parameters. 
-2. I spent lots of time with the original Lenet modal. I played with learning rates, EPOCHS, mu and sigma but I could not get the validation accuracy above 90%. 
-3. I change my model as described above. With the updated model I used following settings
+### Trainining and details of the parameters and hyper parameters. 
+1. I spent lots of time with the original Lenet modal. I played with learning rates, EPOCHS, mu and sigma but I could not get the validation accuracy above 90%. 
+2. I change my model as described above. With the updated model I used following settings
   * EPOCHS = 35
   * Learning Rate = 0.0007
   * Batch size = 128
